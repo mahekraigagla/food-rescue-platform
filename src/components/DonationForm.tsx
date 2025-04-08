@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -80,10 +79,13 @@ const DonationForm = () => {
     const pickupDateTime = new Date(pickupDate);
     pickupDateTime.setHours(parseInt(hours, 10), parseInt(minutes, 10));
     
-    const donationData: Omit<Donation, 'id' | 'donorId' | 'donorName' | 'status' | 'createdAt'> = {
-      ...rest,
+    const donationData = {
+      foodType: rest.foodType,
+      quantity: rest.quantity,
+      description: rest.description,
+      location: rest.location,
       pickupTime: pickupDateTime.toISOString(),
-    };
+    } as Omit<Donation, 'id' | 'donorId' | 'donorName' | 'status' | 'createdAt'>;
     
     await createDonation(donationData);
     navigate('/donor-dashboard');

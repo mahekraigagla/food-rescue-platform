@@ -1,7 +1,6 @@
-
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import { User, UserRole } from '@/types';
 
 interface AuthContextType {
@@ -15,7 +14,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-// Mock users for demonstration
 const mockUsers: User[] = [
   {
     id: '1',
@@ -50,7 +48,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // Check if user is already logged in
   useEffect(() => {
     const savedUser = localStorage.getItem('wasteNotUser');
     if (savedUser) {
@@ -62,10 +59,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (email: string, password: string) => {
     setLoading(true);
     try {
-      // Simulating API call
       const user = mockUsers.find(u => u.email === email);
-      
-      // For demo, we're not checking the password
       if (user) {
         setCurrentUser(user);
         localStorage.setItem('wasteNotUser', JSON.stringify(user));
@@ -85,13 +79,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const signup = async (email: string, password: string, name: string, role: UserRole) => {
     setLoading(true);
     try {
-      // Check if user already exists
       if (mockUsers.some(u => u.email === email)) {
         toast.error('User with this email already exists.');
         return;
       }
 
-      // Create new user
       const newUser: User = {
         id: (mockUsers.length + 1).toString(),
         email,
@@ -100,10 +92,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         createdAt: new Date().toISOString(),
       };
 
-      // Add to mock users (in a real app, this would be an API call)
       mockUsers.push(newUser);
       
-      // Log in the new user
       setCurrentUser(newUser);
       localStorage.setItem('wasteNotUser', JSON.stringify(newUser));
       

@@ -1,6 +1,5 @@
-
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import { Donation } from '@/types';
 import { useAuth } from './AuthContext';
 
@@ -14,7 +13,6 @@ interface DonationContextType {
   getDonationById: (id: string) => Donation | undefined;
 }
 
-// Mock donations
 const initialDonations: Donation[] = [
   {
     id: '1',
@@ -68,7 +66,6 @@ export const DonationProvider = ({ children }: { children: React.ReactNode }) =>
   const createDonation = async (donationData: Omit<Donation, 'id' | 'donorId' | 'donorName' | 'status' | 'createdAt'>) => {
     setLoading(true);
     try {
-      // In a real app, this would be an API call
       if (!currentUser) {
         toast.error('You must be logged in to create a donation.');
         return;
@@ -96,7 +93,6 @@ export const DonationProvider = ({ children }: { children: React.ReactNode }) =>
   const updateDonationStatus = async (id: string, status: Donation['status'], assignedTo?: string, assignedToName?: string) => {
     setLoading(true);
     try {
-      // In a real app, this would be an API call
       const updatedDonations = donations.map((donation) =>
         donation.id === id
           ? { ...donation, status, ...(assignedTo && { assignedTo, assignedToName }) }

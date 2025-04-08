@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,7 +13,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '@/contexts/AuthContext';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -46,10 +45,8 @@ const UserProfile = () => {
 
   const onSubmit = async (data: UserProfileFormValues) => {
     try {
-      // In a real app, this would send the data to your API
       console.log('Profile data submitted:', data);
       
-      // Show success toast
       toast.success('Profile updated successfully!');
     } catch (error) {
       console.error('Error updating profile:', error);
