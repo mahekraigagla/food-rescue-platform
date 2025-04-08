@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -153,9 +154,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-lg">Our Address</h3>
                     <p className="text-gray-600">
-                      123 Green Street<br />
-                      Eco City, ST 12345<br />
-                      United States
+                      42, Green Avenue<br />
+                      Koramangala, Bengaluru 560034<br />
+                      Karnataka, India
                     </p>
                   </div>
                 </div>
@@ -167,9 +168,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-lg">Email Us</h3>
                     <p className="text-gray-600">
-                      General Inquiries: info@wastenot.org<br />
-                      Support: support@wastenot.org<br />
-                      Partnerships: partners@wastenot.org
+                      General Inquiries: info@wastenot.in<br />
+                      Support: support@wastenot.in<br />
+                      Partnerships: partners@wastenot.in
                     </p>
                   </div>
                 </div>
@@ -181,8 +182,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-lg">Call Us</h3>
                     <p className="text-gray-600">
-                      Main Office: +1 (123) 456-7890<br />
-                      Support: +1 (123) 456-7891
+                      Main Office: +91 80 2345 6789<br />
+                      Support: +91 98765 43210
                     </p>
                   </div>
                 </div>
@@ -194,8 +195,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-lg">Office Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM<br />
+                      Monday - Friday: 9:30 AM - 6:30 PM<br />
+                      Saturday: 10:00 AM - 4:00 PM<br />
                       Sunday: Closed
                     </p>
                   </div>

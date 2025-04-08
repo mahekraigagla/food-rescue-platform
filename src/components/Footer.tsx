@@ -32,7 +32,7 @@ const Footer = () => {
               <span className="text-xl font-bold">WasteNot</span>
             </Link>
             <p className="text-sm">
-              Connecting food donors with NGOs to minimize waste and maximize impact.
+              Connecting food donors with NGOs to minimize waste and maximize impact across India.
             </p>
           </div>
           <div className="col-span-1">
@@ -86,8 +86,8 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm">
-              Email: info@wastenot.org<br />
-              Phone: +1 (123) 456-7890
+              Email: info@wastenot.in<br />
+              Phone: +91 98765 43210
             </p>
           </div>
         </div>
