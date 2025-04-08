@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { User, Package, Building, TrendingUp } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -16,7 +15,7 @@ import StatsCard from '@/components/StatsCard';
 import { useAuth } from '@/contexts/AuthContext';
 import { useDonation } from '@/contexts/DonationContext';
 import { Button } from '@/components/ui/button';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 // Mock users for the admin dashboard
 const mockUsers = [
