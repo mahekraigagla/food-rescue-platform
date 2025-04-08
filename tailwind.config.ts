@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// WasteNot custom colors
+				wastenot: {
+					green: '#4CAF50',
+					orange: '#FF9800',
+					yellow: '#FFC107',
+					darkgreen: '#2E7D32',
+					lightgreen: '#8BC34A',
+					background: '#F9FBF7',
+					text: '#333333'
 				}
 			},
 			borderRadius: {
